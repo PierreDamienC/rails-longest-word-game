@@ -1,0 +1,18 @@
+<h2>Welcome to our game !</h2>
+
+<h3>Your grid of letters</h3>
+<ul>
+  <div>
+    <% @letters.each do |letter| %>
+    <li> <%= letter %> </li>
+    <% end %>
+  </div>
+</ul>
+
+<form action="/score" method="post">
+  <label for="answer">Longest word that you can find</label>
+  <input type="text" name="answer" class=" form-text m-auto">
+  <input type="hidden" name='grid' value="<%= @letters %>">
+  <input type="submit" name="submit" value="Submit your word" class="btn btn-primary m-3">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+</form>

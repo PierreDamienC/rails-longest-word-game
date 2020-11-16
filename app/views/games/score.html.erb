@@ -1,0 +1,11 @@
+<h1>Your score</h1>
+
+<p> Your answer : <%= @answer %> </p>
+
+<p> Your score : <%= @score %> </p>
+
+<p> Total score : <%= session["score"] %> </p>
+
+<%= link_to "New game", "/" %>
+
+<%= link_to "Reinitialize", "/" %>
